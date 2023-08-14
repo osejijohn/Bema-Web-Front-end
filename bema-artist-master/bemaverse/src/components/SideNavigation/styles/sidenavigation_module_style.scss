@@ -1,0 +1,134 @@
+// ----------------------------------------------------------------
+// primary styles
+$primary-text: #6b6161;
+$primary-background: #da8600;
+$header-text: #da8600;
+
+// ----------------------------------------------------------------
+// secondary styles
+$secondary-text: #fff;
+$secondary-background: #000;
+.navv {
+  overflow-y: auto;
+  height: 100vh;
+  width: 250px;
+  padding-left: 2px;
+  display: flex;
+  flex-direction: column;
+  background-color: #100e15;
+
+  .x-button {
+    display: none;
+  }
+
+  &::-webkit-scrollbar {
+    width: 5px;
+    background-color: $primary-background;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    width: 5px;
+    background-color: $secondary-background;
+  }
+
+  .navv-header {
+    color: $header-text;
+  }
+  .menu-header {
+    color: $header-text;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    svg {
+      font-size: 1.2em;
+      padding-inline-end: 0.1rem;
+    }
+  }
+
+  ul {
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding-bottom: 2rem;
+    padding-left: 20px;
+
+    li {
+      transition: padding 0.3s ease-in-out;
+      transition: border 0.3 ease-in-out;
+      width: 100%;
+      margin: 0;
+      padding-inline-start: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $primary-text;
+
+      &:has(.active) {
+        border-right: 1px solid #da8600;
+        color: $secondary-text;
+      }
+
+      .active {
+        color: $secondary-text;
+      }
+
+      svg {
+        font-size: 1.5rem;
+        vertical-align: middle;
+      }
+      a {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 1rem;
+        color: #6b6161;
+        text-decoration: none;
+        transition: all 0.3s ease;
+
+        &:hover {
+          color: $secondary-text;
+        }
+      }
+
+      &:hover {
+        &:not(:has(.active)) {
+          border-right: 1px solid #da8600;
+          padding-inline-start: 20px;
+        }
+
+        color: $secondary-text;
+      }
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    overflow-y: auto;
+    height: 100vh;
+    width: 250px;
+    padding-left: 2px;
+    display: flex;
+    flex-direction: column;
+    background-color: #100e15;
+    transition: transform 0.3s ease-in-out;
+    padding-bottom: 20px;
+
+    .x-button {
+      display: flex;
+      font-size: 30px;
+    }
+
+    .navv-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &.open {
+      transform: translateX(250px);
+    }
+  }
+}

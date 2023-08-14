@@ -1,0 +1,78 @@
+//----------------------------------------------------------------
+// primary styles
+$primary-text: #6b6161;
+$primary-background: #da8600;
+$header-text: #da8600;
+
+// ----------------------------------------------------------------
+// secondary styles
+$secondary-text: #fff;
+$secondary-background: #1c1a1a;
+
+.container {
+  border-radius: 2%;
+  line-height: 1.7;
+  background-color: $secondary-background;
+  width: 9em;
+  height: max-content;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  // font-size: 1.2rem;
+
+  .titles {
+    a {
+      text-decoration: none;
+      color: $secondary-text;
+    }
+    display: flex;
+    flex-direction: column;
+
+    .artists-name {
+      font-size: 1rem;
+      font-weight: 800;
+      color: $secondary-text;
+    }
+
+    .role {
+      color: $secondary-text;
+    }
+  }
+  img {
+    width: 8em;
+    height: 8em;
+    border-radius: 50%;
+  }
+}
+
+.pop-artists {
+  width: 100%;
+  overflow: hidden;
+
+  .artCards {
+    overflow-x: auto;
+    height: min-content;
+    display: flex;
+    padding: 10px;
+
+    // grid-template-columns: repeat(auto-fit, minmax(200, 200));
+    gap: 20px;
+  }
+
+  ::-webkit-scrollbar {
+    height: 5px;
+    background-color: #da8600;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: white;
+  }
+}
+
+.min-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  h3 {
+    color: $header-text;
+  }
+}

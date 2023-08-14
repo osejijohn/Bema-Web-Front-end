@@ -1,0 +1,24 @@
+//----------------------------------------------------------------
+// primary styles
+$primary-text: #6b6161;
+$primary-background: #da8600;
+$header-text: #da8600;
+
+// ----------------------------------------------------------------
+// secondary styles
+$secondary-text: #fff;
+$secondary-background: #1c1a1a;
+
+.mobileHeader {
+  display: flex;
+  height: 10vh;
+  justify-content: space-between;
+  align-items: center;
+
+  .HeaderLogo {
+    color: $header-text;
+  }
+  svg {
+    color: $secondary-text;
+  }
+}

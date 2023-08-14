@@ -1,0 +1,70 @@
+// ----------------------------------------------------------------
+// primary styles
+$primary-text: #6b6161;
+$primary-background: #da8600;
+$header-text: #da8600;
+
+// ----------------------------------------------------------------
+// secondary styles
+$secondary-text: #fff;
+$secondary-background: #000;
+
+/* Box-sizing reset */
+html {
+  box-sizing: border-box;
+  user-select: none;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Montserrat Regular"), local("Montserrat-Regular"),
+    url("https://fonts.gstatic.com/s/montserrat/v15/JTUSjIg1_i6t8kCHKm459Wlhzg.ttf")
+      format("truetype");
+}
+
+/* Default styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  color: #333;
+  background: black;
+  display: flex;
+  overflow: hidden;
+
+  .app {
+    width: 100vw;
+    display: flex;
+
+    .mainContentContainer {
+      flex: 1;
+      overflow-y: auto;
+      max-height: 100vh;
+      padding-inline-start: 20px;
+      padding-inline-end: 20px;
+      padding-bottom: 10px;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    padding-inline-start: 0;
+    padding-inline-end: 0;
+
+    .header {
+      display: none;
+    }
+  }
+
+  @media screen and (min-width: 767px) {
+    .mobileHeader {
+      display: none;
+    }
+  }
+}
