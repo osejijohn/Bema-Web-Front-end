@@ -1,22 +1,20 @@
 import React, { useEffect, useState } from "react";
-import { useStateValue } from "./StateProvider";
-import PlayCircleOutlineIcon from "@material-ui/icons/PlayCircleOutline";
-import SkipPreviousIcon from "@material-ui/icons/SkipPrevious";
-import SkipNextIcon from "@material-ui/icons/SkipNext";
-import ShuffleIcon from "@material-ui/icons/Shuffle";
-import RepeatIcon from "@material-ui/icons/Repeat";
-import VolumeDownIcon from "@material-ui/icons/VolumeDown";
-import PauseCircleOutlineIcon from "@material-ui/icons/PauseCircleOutline";
-import PlaylistPlayIcon from "@material-ui/icons/PlaylistPlay";
+import { useStateValue } from ";
+import PlayCircleOutlineIcon from ";
+import SkipPreviousIcon from ";
+import SkipNextIcon from ";
+import ShuffleIcon from ";
+import RepeatIcon from ";
+import VolumeDownIcon from ";
+import PauseCircleOutlineIcon from ";
+import PlaylistPlayIcon from ";
 import "./Footer.css";
-import { Grid, Slider } from "@material-ui/core";
+import { Grid, Slider } from ";
 
 function Footer({ spotify }) {
   const [{ token, item, playing }, dispatch] = useStateValue();
 
   useEffect(() => {
-    spotify.getMyCurrentPlaybackState().then((r) => {
-      console.log(r)
 ;
 
       dispatch({
@@ -33,13 +31,13 @@ function Footer({ spotify }) {
 
   const handlePlayPause = () => {
     if (playing) {
-      spotify.pause();
+      .pause();
       dispatch({
         type: "SET_PLAYING",
         playing: false,
       });
     } else {
-      spotify.play();
+      .play();
       dispatch({
         type: "SET_PLAYING",
         playing: true,
@@ -48,8 +46,8 @@ function Footer({ spotify }) {
   };
 
   const skipNext = () => {
-    spotify.skipToNext();
-    spotify.getMyCurrentPlayingTrack().then((r) => {
+    .skipToNext();
+    .getMyCurrentPlayinTrack().then((r) => {
       dispatch({
         type: "SET_ITEM",
         item: r.item,
@@ -62,8 +60,8 @@ function Footer({ spotify }) {
   };
 
   const skipPrevious = () => {
-    spotify.skipToPrevious();
-    spotify.getMyCurrentPlayingTrack().then((r) => {
+    .skipToPrevious();
+    .getMyCurrentPlayingTrack().then((r) => {
       dispatch({
         type: "SET_ITEM",
         item: r.item,
